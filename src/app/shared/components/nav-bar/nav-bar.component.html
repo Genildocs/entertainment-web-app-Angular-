@@ -4,6 +4,23 @@
   <div>
     <img src="assets/logo.svg" alt="logo" />
   </div>
-  <div class="flex items-center gap-5">links</div>
-  <div>avatar</div>
+  <div class="flex items-center gap-5">
+    @for(image of images; track $index){
+    <a routerLink="{{ image.link }}">
+      <img
+        [src]="image.src"
+        alt="{{ image.alt }}"
+        class="sm:w-[32px] sm:h-[25px]"
+      />
+    </a>
+    }
+  </div>
+  <div>
+    <img
+      src="assets/image-avatar.png"
+      alt="avatar"
+      class="w-[32px] h-[32px]sm:w-[32px] sm:h-[25px]"
+      style="border: 1px solid white; border-radius: 50%; object-fit: cover"
+    />
+  </div>
 </div>

@@ -1,1 +1,20 @@
-<p>input-search works!</p>
+<div class="pl-3 pt-5">
+  <form class="flex items-center gap-5">
+    <i-feather
+      name="search"
+      style="color: white"
+      class="cursor-pointer !w-5 !h-5"
+      (click)="searchResult()"
+    ></i-feather>
+    <input
+      type="text"
+      class="outline-none bg-transparent text-white w-full max-w-[250px] placeholder:text-md"
+      [placeholder]="placeholder"
+      required
+      minlength="3"
+      name="search"
+      [(ngModel)]="search"
+      #name="ngModel"
+    />
+  </form>
+</div>
