@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IconsModule } from '../../../icons/icons.module';
 import { FormsModule } from '@angular/forms';
-
+import { data } from '../../../../data';
+import { CategoryItem } from '../../../interfaces';
 @Component({
   selector: 'app-input-search',
   standalone: true,
@@ -11,14 +12,16 @@ import { FormsModule } from '@angular/forms';
 })
 export class InputSearchComponent implements OnInit {
   @Input() placeholder: string = '';
-
+  thisResult: CategoryItem[] = [];
   search: string = '';
 
   searchResult() {
-    if (this.search.trim() === '') {
-      alert('Please enter something');
-      return;
-    }
+    if (this.search.trim() === '') return;
+
+    const filterSeach = data.filter((item) =>
+      item.title.toLowerCase().includes(this.search.toLowerCase())
+    );
+    this.thisResult = filterSeach;
   }
 
   ngOnInit(): void {}
