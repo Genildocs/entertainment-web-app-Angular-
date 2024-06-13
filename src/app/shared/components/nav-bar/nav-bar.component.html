@@ -1,16 +1,16 @@
 <div
-  class="bg-blue_1 h-[10vh] flex items-center justify-between px-3 sm:m-5 sm:rounded-md"
+  class="bg-blue_1 h-[10vh] lg:h-[90vh] lg:w-[96px] flex lg:flex-col items-center justify-between px-3 lg:py-3 sm:m-5 sm:rounded-md"
 >
   <div>
     <img src="assets/logo.svg" alt="logo" />
   </div>
-  <div class="flex items-center gap-5">
+  <div class="flex items-center lg:flex-col gap-5">
     @for(image of images; track $index){
     <a routerLink="{{ image.link }}">
       <img
         [src]="image.src"
         alt="{{ image.alt }}"
-        class="sm:w-[32px] sm:h-[25px]"
+        class="sm:w-[32px] sm:h-[25px] lg:w-[20px] lg:h-[20px]"
       />
     </a>
     }
@@ -19,7 +19,7 @@
     <img
       src="assets/image-avatar.png"
       alt="avatar"
-      class="w-[32px] h-[32px]sm:w-[32px] sm:h-[25px]"
+      class="w-[32px] h-[32px] sm:w-[32px] sm:h-[25px] lg:w-[40px] lg:h-[40px]"
       style="border: 1px solid white; border-radius: 50%; object-fit: cover"
     />
   </div>
