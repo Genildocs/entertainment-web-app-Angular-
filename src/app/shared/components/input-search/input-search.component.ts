@@ -21,7 +21,7 @@ export class InputSearchComponent implements OnInit {
     const filterSeach = data.filter((item) =>
       item.title.toLowerCase().includes(this.search.toLowerCase())
     );
-    this.thisResult = filterSeach;
+    this.thisResult = filterSeach ;
   }
 
   ngOnInit(): void {}

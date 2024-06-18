@@ -2,7 +2,7 @@ export interface CategoryItem {
   title: string;
   year: number;
   category: string;
-  rating: string;
+  rating?: string;
   thumbnail: {
     regular: {
       small: string;
